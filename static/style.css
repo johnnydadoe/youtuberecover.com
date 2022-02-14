@@ -1,0 +1,79 @@
+
+
+body {
+  background-color: #999;
+}
+
+.navbar-static-top {
+  margin-bottom: 19px;
+}
+
+/* bs3: mobile navbar without js custom
+ * ------------------------------------
+ * show the collapse when navbar toggle is checked */
+#navbar-toggle-cbox:checked ~ .collapse {
+	display: block;
+}
+
+/* the checkbox used only internally; don't display it */
+#navbar-toggle-cbox {
+  display:none
+}
+
+.navbar-default {
+    background-color: #DDD;
+    border-color: #E1E1E1;
+}
+
+.jumbotron{
+
+	  background-color: #E1E1E1;
+}
+
+/* table */
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+td:first-child { 
+  font-weight: bold;
+}
+
+#ok {
+  color: darkorange;
+  font-size: 17px;
+}
+
+#err {
+  color: red;
+  font-size: 17px;
+}
+
+.answer {
+  font-style: italic;
+  font-size: 17px;
+}
+
+.hint {
+  font-size: 16px;
+  }
+
+#thumbnail {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.25em;
+  
+}

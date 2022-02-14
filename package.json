@@ -1,0 +1,24 @@
+{
+  "name": "youtuberecover.com",
+  "version": "1.0.0",
+  "description": "sudo apt update sudo apt install nodejs sudo apt install npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/youtuberecover/youtuberecover.com.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/youtuberecover/youtuberecover.com/issues"
+  },
+  "homepage": "https://github.com/youtuberecover/youtuberecover.com#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "mongodb": "3.6.4"
+  }
+}

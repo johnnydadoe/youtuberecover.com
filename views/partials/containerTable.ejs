@@ -1,0 +1,57 @@
+<div class='container'>
+
+    <div class='jumbotron'>
+    
+
+
+
+<%- include('form') %> 
+<br>
+
+  
+<table>
+<% 
+
+for (var i = 0; i < options['order'].length; i++ ) {
+ var element = options['order'][i];
+
+
+ if (!(element in data)) {
+ 	continue;
+ }
+
+ var tag = options['inclosedTags'][element]
+ var startTag = tag;
+ if (tag == 'a') {
+
+ 	if (element == 'uploader_id')
+ 		startTag = 'a href="/channel?id=' + data['uploader_id'] + '"'
+ 	else if (element == 'id')
+ 		startTag = 'a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=' + data['id'] + '"'
+ }
+header = options['renamedKeys'][element]
+valueOfHeader = data[element]
+
+ if (element == 'source'){
+ 		if (data[element] == 'Jopik1\'s youtube metadata crawl') {
+ 			startTag = "a href='https://archive.org/details/Youtube_metadata_02_2019'"
+ 			tag = 'a'
+ 			}
+ 	}
+else if (element == 'description') {
+		startTag = 'span style="white-space: pre-line"';
+}
+
+%>
+<tr>
+	<td><%= header %></td>
+	<td><<%- startTag %>><%= valueOfHeader %></<%= tag %>></td>	
+</tr><% } %>
+
+</table>
+
+
+<br>
+<center><a href="/json/<%= data['id'] %>">Download json-file</a></center>
+</div>
+</div> 

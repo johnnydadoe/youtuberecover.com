@@ -1,0 +1,4 @@
+{
+    "http_port": 2500,
+    "mongo_connectionstring": "mongodb://localhost"
+}

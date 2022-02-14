@@ -1,0 +1,66 @@
+<title> <%= count %> videos on db! </title>
+<style> 
+html *
+{
+     font-family: monospace;
+     background-color: #272727;
+}
+
+td, span {
+	color: #bbb;
+}
+
+a {
+	color: #55f;
+}
+
+</style>
+<center>
+
+<% for(var i = 0; i < Math.ceil(count / limit); i++) { %> 
+<a href="<%= i %>"><%= i %></a>
+<% } %>
+
+
+</center><br>
+<table><% for(var i = 0; i < videos.length; i++) { %>
+<tr>
+     <td><a href="<%= videos[i].id %>" ><%= videos[i].id %></td>
+     <td><a href="<%= 'https://www.youtube.com/watch?v=' + videos[i].id %>">Src</a></td>
+     <td><%= videos[i].title %></td>
+     <td><%= videos[i].fetch_date.substring(0,4) + '-' + videos[i].fetch_date.substring(4,6) + '-' + videos[i].fetch_date.substring(6,8)  + ' ' + videos[i].fetch_date.substring(8,10) + ':' + videos[i].fetch_date.substring(10, 12)  + ':' + videos[i].fetch_date.substring(12, 14) %></td>
+
+</tr><% } %>
+</table>
+<%
+function convert(timestampInSeconds){
+
+ // Months array
+ var months_arr = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+ // Convert timestamp to milliseconds
+ var date = new Date(timestampInSeconds * 1000);
+
+ // Year
+ var year = date.getFullYear();
+
+ // Month
+ var month = ('' + date.getMonth()).padStart(2, '0');
+
+ // Day
+ var day = ('' + date.getDate()).padStart(2, '0')
+
+ var hour = ('' + date.getHours()).padStart(2, '0')
+
+
+ var min  = ('' + date.getMinutes()).padStart(2, '0')
+
+
+
+ // Display date time in MM-dd-yyyy h:m:s format
+ var convdataTime = year + '-' + month + '-' + day + ' ' + hour + ':' + min;
+ 
+ return (convdataTime)
+ 
+}
+%>

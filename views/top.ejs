@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %> 
+<body>
+<%- include('partials/navbar') %> 
+
+<div class='container'>
+
+    <div class='jumbotron'>
+    
+
+
+<br>
+
+  
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Uploader</th>
+        <th>Upload Date</th>
+        <th>Views</th>
+      </tr>
+
+      <% for(let i = 0;i < listVids.length; i++){  %>
+        <tr>
+            <td> <a href='<%= "/watch?v=" + listVids[i].id %>' > <%= listVids[i].title %>  </a></td> 
+            <td> <a href='<%= "/channel?id=" + listVids[i].uploader_id %>'> <%= listVids[i].uploader %>  </a> </td>
+            <td style="width: 9%;"> <%= listVids[i].upload_date %> </td>
+            <td><%= listVids[i].view_count %></td>
+        </tr>
+       <%} %>
+
+</table>
+
+</div>
+</div> 
+
+</body>
+</html>
+
